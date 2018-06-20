@@ -1,0 +1,121 @@
+curl -X POST \
+  -H "X-Parse-Application-Id: QXRTROGsVaRn4a3kw4gaFnHGNOsZxXoZ8ULxwZmf" \
+  -H "Content-Type: application/json" \
+  -d '{"score":1337,"playerName":"Sean Plott","cheatMode":false}' \
+  http://crowdcheerdb.herokuapp.com/parse/classes/
+  
+  curl -X GET -H "X-Parse-Application-Id: QXRTROGsVaRn4a3kw4gaFnHGNOsZxXoZ8ULxwZmf" -H "X-Parse-Master-Key: 
+  j9TIxQX3zEHkDPfQszCa6ariYTmZ8JU0RC31BKZK" http://localhost:1337/parse/classes/GameScore
+
+  curl -X POST -H "X-Parse-Application-Id: QXRTROGsVaRn4a3kw4gaFnHGNOsZxXoZ8ULxwZmf" -H "Content-Type: image/jpeg" --data-binary '@myPicture.jpg' /Users/Leesha/Desktop/CrowdCheerFlyer.jpeg
+
+  curl -X GET -H "X-Parse-Application-Id: QXRTROGsVaRn4a3kw4gaFnHGNOsZxXoZ8ULxwZmf" -H "X-Parse-Master-Key: j9TIxQX3zEHkDPfQszCa6ariYTmZ8JU0RC31BKZK" http://localhost:1337/parse/files/pic.jpg
+
+
+  curl -X POST \
+  -H "X-Parse-Application-Id: QXRTROGsVaRn4a3kw4gaFnHGNOsZxXoZ8ULxwZmf" \
+  -H "Content-Type: application/json" \
+  -d '{"location": [
+        -87.677232,
+        42.000001
+    ],
+    "_p_user": "_User$ck6DC2F1gI",
+    "speed": 0,
+    "_created_at": {
+        "$date": "2016-10-09T11:33:09.749Z"
+    },
+    "_updated_at": {
+        "$date": "2017-02-03T15:52:33.768Z"
+    },
+    "duration": "00:08:00",
+    "pace": "0",
+    "prevLocLon": -87.677232,
+    "distance": 0,
+    "prevLocLat": 42.051169,
+    "time": {
+        "$date": "2017-02-03T15:52:33.734Z"
+    }}' http://crowdcheerdb.herokuapp.com/parse/classes/CurrRunnerLocation/wl7DOoTpKR
+
+
+curl -X PUT \
+  -H "X-Parse-Application-Id: QXRTROGsVaRn4a3kw4gaFnHGNOsZxXoZ8ULxwZmf" \
+  -H "Content-Type: application/json" \
+  -d '{"password":"pwd"}' \
+  https://crowdcheerdb.herokuapp.com/parse/classes/CurrRunnerLocation/qt07DiciGv
+
+  $2a$10$F2IbeRotakXLiXfSiBYMn.dGlNZ7zTl0BmY7VSEHTN0cIJGuoI4/W
+
+  curl -X POST \
+  -H "X-Parse-Application-Id: QXRTROGsVaRn4a3kw4gaFnHGNOsZxXoZ8ULxwZmf" \
+  -H "Content-Type: application/json" \
+  -d '{"distance":1337}' \
+  https://crowdcheerdb.herokuapp.com/parse/classes/RunnerLocations/
+
+
+import requests, json
+base_url = 'https://crowdcheerdb.herokuapp.com/parse/classes/CurrRunnerLocation/wl7DOoTpKR'
+header = {'X-Parse-Application-Id': 'QXRTROGsVaRn4a3kw4gaFnHGNOsZxXoZ8ULxwZmf', 'Content-type': 'application/json'}
+data = {"speed": 1337.0 }
+resp = requests.put(base_url, headers=header, data=json.dumps(data))
+print resp
+
+{
+    "_id": "_id",
+    "location": "location",
+    "speed": "speed",
+    "distance": "distance",
+    "time": "time",
+    "pace": "pace",
+    "duration": "duration",
+    "_p_user": "_p_user",
+    "_created_at": "_created_at",
+    "_updated_at": "_updated_at"
+}
+
+{
+    "_id": "_id",
+    "prevLocLat": "prevLocLat",
+    "distance": "distance",
+    "duration": "duration",
+    "_created_at": "_created_at",
+    "_p_user": "_p_user",
+    "speed": "speed",
+    "_updated_at": "_updated_at",
+    "location": "location",
+    "prevLocLon": "prevLocLon",
+    "time": "time",
+    "pace": "pace"
+}
+
+mongo ds145178.mlab.com:45178/crowdcheerdb -u moliri -p <password>
+db.runCommand(
+  {
+    update: "_User",
+    updates: [
+      {
+        q: { _id: "qt07DiciGv" }, u: { $set: { _hashed_password: "pwd" } }
+
+      }
+    ],
+    ordered: false,
+    writeConcern: { w: "majority", wtimeout: 5000 }
+  }
+)
+
+
+curl -X POST \
+  -H "X-Parse-Application-Id: QXRTROGsVaRn4a3kw4gaFnHGNOsZxXoZ8ULxwZmf" \
+  -H "Content-Type: application/json" \
+  -d '{      
+        "nearbyRunnerCount": 3
+      }' \
+  https://crowdcheerdb.herokuapp.com/parse/classes/NearbyRunnerCounts/
+
+
+
+"nearbyRunners": [
+        "_User$F69Ur5wcaI",
+        "_User$F69Ur5wcaI",
+        "_User$F69Ur5wcaI"
+      ],
+
